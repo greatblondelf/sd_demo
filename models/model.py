@@ -56,7 +56,7 @@ def get_model(X, FLAGS):
 	e1 = tf.nn.elu(d1)
 	dense1 = tf.layers.dense(e1, units = FLAGS.fc_dim)
 	d2 = tf.nn.dropout(dense1, FLAGS.dropout_rate2)
-	e2 = tf.nn.elu(d2)	
+	e2 = tf.nn.elu(d2)
 	dense2 = tf.layers.dense(e2, units = 1)
 
 	return dense2
@@ -69,10 +69,10 @@ def get_loss(predictions,labels):
 
 
 def variable_summaries(var):
- 	"""Attach a lot of summaries to a Tensor (for TensorBoard visualization).
+	"""Attach a lot of summaries to a Tensor (for TensorBoard visualization).
 	credits: https://www.tensorflow.org/get_started/summaries_and_tensorboard
- 	"""
- 	with tf.name_scope('summaries'):
+	"""
+	with tf.name_scope('summaries'):
 		mean = tf.reduce_mean(var)
 		tf.summary.scalar('mean', mean)
 		with tf.name_scope('stddev'):
