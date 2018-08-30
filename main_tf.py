@@ -192,8 +192,8 @@ def main():
 
         if FLAGS.task_index == 0:
             print("Looking for data in %s" % FLAGS.train_data_dir)
-    	reader = DataReader(FLAGS.train_data_dir)
-    	x, y, s = reader.read_row_tf()
+        reader = DataReader(FLAGS.train_data_dir)
+        x, y, s = reader.read_row_tf()
         x.set_shape((3, 160, 320))
         y.set_shape((1))
         s.set_shape((1))
